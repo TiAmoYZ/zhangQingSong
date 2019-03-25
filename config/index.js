@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require("path");
+const fileName = "zqs";
 
 module.exports = {
   dev: {
@@ -36,18 +37,18 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, "../zqs/index.html"),
+    index: path.resolve(__dirname, "../" + fileName + "/index.html"),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, "../zqs"),
+    assetsRoot: path.resolve(__dirname, "../" + fileName + ""),
     assetsSubDirectory: "static",
-    assetsPublicPath: "/",
+    assetsPublicPath: "./",
 
     /**
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: "#source-map",
 
@@ -55,7 +56,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    productionGzip: true,
     productionGzipExtensions: ["js", "css"],
 
     // Run the build command with an extra argument to
